@@ -5,7 +5,7 @@ export interface TemplateStateProps {
 }
 
 const initialState: TemplateStateProps = {
-  value: 0,
+  value: 5,
 };
 
 const templateSlice = createSlice({
