@@ -20,6 +20,8 @@ const Button = styled.button`
 
 const Value = styled.span`
   margin: 0 2rem;
+  min-width: 2rem;
+  text-align: center;
 `;
 
 export const App = () => {
@@ -28,11 +30,9 @@ export const App = () => {
   return (
     <Container>
       <GlobalStyle />
-      <header>
-        <Button onClick={() => disaptch(decrement())}>Decrement</Button>
-        <Value>{value}</Value>
-        <Button onClick={() => disaptch(increment())}>Increment</Button>
-      </header>
+      <Button onClick={() => disaptch(decrement())}>Decrement</Button>
+      <Value>{value}</Value>
+      <Button onClick={() => disaptch(increment())}>Increment</Button>
     </Container>
   );
 };
