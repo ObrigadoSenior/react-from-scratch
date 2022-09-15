@@ -1,21 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { decrement, increment } from './store/slices/template';
+import { useAppDispatch, useAppSelector } from './store/store';
 
-function App() {
+export const App = () => {
+  const disaptch = useAppDispatch();
+  const { value } = useAppSelector(({ template }) => template);
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
+        <button onClick={() => disaptch(decrement())}>Decreament</button>
+        <span>{value}</span>
+        <button onClick={() => disaptch(increment())}>Increament</button>
       </header>
     </div>
   );
-}
-
-export default App;
+};
